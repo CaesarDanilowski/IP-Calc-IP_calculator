@@ -29,6 +29,8 @@ class Calculations {
         if (!wasErrorBefore) {
             validateInput("", secondAsArray, hostAddress, finalHostString, secondBuilder, BoolArithmeticButtons.hostBinary, frame);
         }
+        
+        wasErrorBefore = false;
 
         BoolArithmeticButtons.negateOfSubnetMask();
         BoolArithmeticButtons.andHostAndSubnet();
