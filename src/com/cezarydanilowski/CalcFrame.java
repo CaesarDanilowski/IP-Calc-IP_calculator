@@ -33,18 +33,18 @@ public class CalcFrame extends JFrame {
     }
 
     private void addMenu() {
-        JMenu file = new JMenu("Plik");
-        JMenu help = new JMenu("Pomoc");
+        JMenu file = new JMenu("File");
+        JMenu help = new JMenu("Help");
 
-        JMenuItem run = new JMenuItem("Oblicz");
-        run.setAccelerator(KeyStroke.getKeyStroke("ctrl E"));
-        JMenuItem newFile = new JMenuItem("Nowy", 'N');
+        JMenuItem run = new JMenuItem("Run");
+        run.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
+        JMenuItem newFile = new JMenuItem("New", 'N');
         newFile.setAccelerator(KeyStroke.getKeyStroke("ctrl N"));
-        JMenuItem saveFile = new JMenuItem("Zapisz", 'Z');
+        JMenuItem saveFile = new JMenuItem("Save", 'Z');
         saveFile.setAccelerator(KeyStroke.getKeyStroke("ctrl S"));
-        JMenuItem importFile = new JMenuItem("Otwórz", 'O');
+        JMenuItem importFile = new JMenuItem("Open", 'O');
         importFile.setAccelerator(KeyStroke.getKeyStroke("ctrl O"));
-        JMenuItem exit = new JMenuItem("Zakończ");
+        JMenuItem exit = new JMenuItem("Exit");
         run.addActionListener(ActionEvent -> calculations.executeAllCalculations());
         exit.addActionListener(ActionEvent -> System.exit(0));
         newFile.addActionListener(ActionEvent -> setEverythingEmpty());
@@ -70,8 +70,8 @@ public class CalcFrame extends JFrame {
         file.add(importFile);
         file.add(exit);
 
-        JMenuItem authors = new JMenuItem("Autorzy");
-        JMenuItem about = new JMenuItem("O programie");
+        JMenuItem authors = new JMenuItem("Authors");
+        JMenuItem about = new JMenuItem("About the program");
         authors.addActionListener(ActionEvent -> {
             JDialog authorsDialog = new JDialog();
             authorsDialog.setSize(new Dimension(655, 388));
